@@ -12,8 +12,11 @@ namespace UtahMVC.Controllers
     public class HomeController : Controller
     {
 
-        public HomeController()
+        private CrashesDbContext context { get; set; }
+
+        public HomeController(CrashesDbContext temp)
         {
+            context = temp;
         }
 
         public IActionResult Index()
@@ -30,6 +33,13 @@ namespace UtahMVC.Controllers
         public IActionResult Crashes()
         {
             return View();
+        }
+
+        public IActionResult Details(int id)
+        {
+            var crash = context.Crashes.Single(x => x.CRASH_ID == id);
+
+            return View(crash);
         }
 
     }
