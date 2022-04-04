@@ -577,9 +577,10 @@ h5.subtitle {
 }
 
 .banner-3 {
-  background: url("../images/banner/banner-img.jpeg");
-  background-size:inherit;
-  position: relative;
+    background: url("../images/banner/banner-img.jpeg");
+    background-size: auto;
+    position: relative;
+    background-size: 100%;
 }
 
 .section-heading h2 {
