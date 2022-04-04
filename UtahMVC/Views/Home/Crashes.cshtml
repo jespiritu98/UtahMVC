@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<Crash>
+
+
+<!-- display team filters-->
+<div class="row">
+    <div class="col-2">
+        <vc:crashes></vc:crashes>
+    </div>
+
+    <!-- crash table-->
+    <div class="col-10">
+        <table class="table table-bordered table-striped">
+            <thead class="font-weight-bold">
+                <tr>
+                    <td>Crash ID</td>
+                    <td>Date/Time</td>
+                    <td>Route</td>
+                    <td>Milepoint</td>
+                    <td>Road</td>
+                    <td>City</td>
+                    <td>County</td>
+                    <td>Crash Severity</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <td>@c.CRASH_ID</td>
+                        <td>@c.CRASH_DATETIME</td>
+                        <td>@c.ROUTE</td>
+                        <td>@c.MILEPOINT</td>
+                        <td>@c.MAIN_ROAD_NAME</td>
+                        <td>@c.CITY</td>
+                        <td>@c.COUNTY_NAME</td>
+                        <td>@c.CRASH_SEVERITY_ID</td>
+                        <td asp-controller="Home" asp-action="Details" asp-route-id="@c.CRASH_ID">Details</td>
+                    </tr>
+                }
+            </tbody>
+
+
+        </table>
+    </div>
+</div>

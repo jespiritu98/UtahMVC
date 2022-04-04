@@ -5,41 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - UtahMVC</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- bootstrap layout-->
+    <link rel="stylesheet" href="~/bootstrap/plugins/bootstrap/css/bootstrap.css" />
+    <!-- Icofont Css -->
+    <link rel="stylesheet" href="~/bootstrap/plugins/fontawesome/css/all.css">
+    <!-- animate.css -->
+    <link rel="stylesheet" href="~/bootstrap/plugins/animate-css/animate.css">
+    <!-- Icofont -->
+    <link rel="stylesheet" href="~/bootstrap/plugins/icofont/icofont.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="~/bootstrap/css/style.css">
+
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <!-- navigation bar -->
+        <nav class="navbar navbar-expand-lg fixed-top trans-navigation">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">UtahMVC</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                @*<a class="navbar-brand" href="index.html">
+                    <img src="~/bootstrap/images/logo.png" alt="" class="img-fluid b-logo">
+                </a>*@
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fa fa-bars"></i>
+                    </span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
+
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+                    <ul class="navbar-nav ">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link smoth-scroll" asp-controller="Home" asp-action="Index" >Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link smoth-scroll" asp-controller="Home" asp-action="Search">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link smoth-scroll" asp-controller="Home" asp-action="Crashes">View All Data</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <!-- end navigation bar -->
     </header>
+
     <div class="container">
-        <main role="main" class="pb-3">
             @RenderBody()
-        </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <!--  FOOTER AREA START  -->
+    <section id="footer" class="section-padding">
         <div class="container">
-            &copy; 2022 - UtahMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="row">
+                <div class="col-lg-5 col-sm-8 col-md-8">
+                    <div class="footer-widget footer-link">
+                        <h4>We concern about you<br> and your safety on the road.</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-4 col-md-4">
+                    <div class="footer-widget footer-link">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="#">Collisions</a></li>
+                            <li><a href="#">Search</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-md-6">
+                    <div class="footer-widget footer-text">
+                        <h4>Our location</h4>
+                        <p><span>Phone:</span> 801-111-1111</p>
+                        <p><span>Location:</span> 111 State St, Provo, UT, 84602</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer-copy">
+                        © 2022 UtahMVC inc. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
+    <!--  FOOTER AREA END  -->
+
+    <!-- Main jQuery -->
+    <script src="~/bootstrap/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4.3.1 -->
+    <script src="~/bootstrap/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="~/bootstrap/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Woow animtaion -->
+    <script src="~/bootstrap/plugins/counterup/wow.min.js"></script>
+    <script src="~/bootstrap/plugins/counterup/jquery.easing.1.3.js"></script>
+    <!-- Counterup -->
+    <script src="~/bootstrap/plugins/counterup/jquery.waypoints.js"></script>
+    <script src="~/bootstrap/plugins/counterup/jquery.counterup.min.js"></script>
+
+    <!-- Google Map -->
+    <script src="~/bootstrap/plugins/google-map/gmap3.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
+    <!-- Contact Form -->
+    <script src="~/bootstrap/plugins/jquery/contact.js"></script>
+    <script src="~/bootstrap/js/custom.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
